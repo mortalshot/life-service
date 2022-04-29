@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Kontakt"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			<section class="contacts contacts_single">
+				<div class="contacts__container">
+                    <div class="contacts__body">
+                        <div class="contacts__content _content">
+							<h1>Los geht’s</h1>
+                            <h3>Wir freuen uns auf Ihre Kontaktaufnahme</h3>
+						</div>
+                        <div class="contacts__contact contact">
+                            <a href="www.service-life.at" class="contact__item">
+                                <img src="@img/icons/site.svg" alt="" loading="lazy">
+                                <span>www.service-life.at</span>
+                            </a>
+                            <div class="contact__item">
+                                <img src="@img/icons/location.svg" alt="" loading="lazy">
+                                <span>Musterstrasse 1, Wien AT-1010</span>
+                            </div>
+                            <a href="mailto:office@service-life.at" class="contact__item">
+                                <img src="@img/icons/email.svg" alt="" loading="lazy">
+                                <span>office@service-life.at</span>
+                            </a>
+                            <a href="tel:+436761234567" class="contact__item">
+                                <img src="@img/icons/phone.svg" alt="" loading="lazy">
+                                <span>+43 676 1234567</span>
+                            </a>
+                        </div>
+                    </div>
+					<div class="contacts__right">
+						<form action="" class="contacts__form form">
+							<div class="form__row">
+								<div class="form__item col-12">
+									<label for="contacts-mail" class="form__label">E-Mail-Adresse <span>*</span></label>
+									<input id="contacts-mail" type="email" name="contacts-mail" placeholder="jane.doe@gmail.com" class="form__input" required>
+								</div>
+								<div class="form__item col-12">
+									<label for="contacts-name" class="form__label">Ihr Name <span>*</span></label>
+									<input id="contacts-name" type="text" name="contacts-name" placeholder="Jane Doe" class="form__input" required>
+								</div>
+								<div class="form__item col-12">
+									<div class="form__label">Womit wir Ihnen helfen dürfen?</div>
+									<select name="" class="form">
+										<option value="">Wählen Sie eine oder Mehrere Optionen aus</option>
+										<option value="Neue Kunden gewinnen auf Balancio.at">Neue Kunden gewinnen auf Balancio.at</option>
+										<option value="Online Terminbuchung leicht gemacht">Online Terminbuchung leicht gemacht</option>
+										<option value="In HD/4K Qualität präsentieren">In HD/4K Qualität präsentieren</option>
+										<option value="Mit professionellen Bildern überzeugen">Mit professionellen Bildern überzeugen</option>
+										<option value="Seminarorganisation">Seminarorganisation</option>
+										<option value="Go-Online – Lernen sie Streaming">Go-Online – Lernen sie Streaming</option>
+									</select>
+								</div>
+								<div class="form__item col-12">
+									<label for="contacts-comment" class="form__label">Ihre Nachricht</label>
+									<textarea autocomplete="off" name="contacts-comment" class="form__input" rows="1"></textarea>
+								</div>
+							</div>
+
+							<div class="form__submit">
+								<button class="btn btn_border">Formular absenden</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

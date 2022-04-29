@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"404"
+})
+
+<body>
+    <div class="wrapper">
+        @@include('html/_header.htm',{})
+        <main class="page">
+            <section class="error">
+                <div class="error__container">
+                    <div class="error__body">
+                        <div class="_content">
+                            <h1>UPPS..</h1>
+                            <h3>Etwas ist schief gelaufen </h3>
+                            <br>
+                            <h2 style="color: #4f4f4f;">Das hätte nie passieren dürfen. <br> Bitte, versuchen Sie es noch einmal!</h2>
+                        </div>
+                        <a href="" class="btn btn_border">Zur Startseite</a>
+                    </div>
+                    <div class="error__image"><img src="@img/error.svg" alt="" loading="lazy"></div>
+                </div>
+            </section>
+        </main>
+        @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_popup.htm',{})
+    @@include('html/_js.htm',{})
+</body>
+
+</html>

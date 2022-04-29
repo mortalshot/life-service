@@ -1,0 +1,56 @@
+<div id="request" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close"></button>
+			<div class="popup__text">
+				<form action="" class="contacts__form form">
+					<div class="form__row">
+						<div class="form__item col-12">
+							<label for="request-mail" class="form__label">E-Mail-Adresse <span>*</span></label>
+							<input id="request-mail" type="email" name="request-mail" placeholder="jane.doe@gmail.com" class="form__input" required>
+						</div>
+						<div class="form__item col-12">
+							<label for="request-name" class="form__label">Ihr Name <span>*</span></label>
+							<input id="request-name" type="text" name="request-name" placeholder="Jane Doe" class="form__input" required>
+						</div>
+						<div class="form__item col-12">
+							<div class="form__label">Womit wir Ihnen helfen dürfen?</div>
+							<select name="" class="form">
+								<option value="">Wählen Sie eine oder Mehrere Optionen aus</option>
+								<option value="Neue Kunden gewinnen auf Balancio.at">Neue Kunden gewinnen auf Balancio.at</option>
+								<option value="Online Terminbuchung leicht gemacht">Online Terminbuchung leicht gemacht</option>
+								<option value="In HD/4K Qualität präsentieren">In HD/4K Qualität präsentieren</option>
+								<option value="Mit professionellen Bildern überzeugen">Mit professionellen Bildern überzeugen</option>
+								<option value="Seminarorganisation">Seminarorganisation</option>
+								<option value="Go-Online – Lernen sie Streaming">Go-Online – Lernen sie Streaming</option>
+							</select>
+						</div>
+						<div class="form__item col-12">
+							<label for="request-comment" class="form__label">Ihre Nachricht</label>
+							<textarea autocomplete="off" name="request-comment" class="form__input" rows="1"></textarea>
+						</div>
+					</div>
+
+					<div class="form__submit">
+						<button class="btn btn_border">Formular absenden</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="success" aria-hidden="true" class="popup success">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close"></button>
+			<div class="popup__text">
+				<div class="success__title">Danke! Ihre Nachricht wurde gesendet.</div>
+				<div class="success__text _content">
+					<p>Wir freuen uns darauf, Sie bei der Verwaltung Ihres Unternehmens zu unterstützen. In den nächsten Tagen werden wir auf Ihre Anfrage antworten. Inzwischen können Sie sich über unsere Dienstleistungen informieren.</p>
+				</div>
+				<div class="success__btn"><button type="button" class="btn btn_border" data-close="">Leistungen ansehen</button></div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,31 @@
+//<BUTTONS (a.btn+tab)>
+// Снипет (HTML): btn
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 500;
+	@include adaptiveValue("font-size", 17, 14);
+	line-height: math.div(22, 17);
+	text-align: center;
+	padding: rem(5) rem(22);
+	@include adaptiveValue("padding-left", 22, 15);
+	@include adaptiveValue("padding-right", 22, 15);
+	@include adaptiveValue("min-height", 50, 45);
+	border-radius: rem(0);
+	border: rem(2) solid transparent;
+
+	&_border {
+		border-color: $Blue;
+
+		@media (any-hover: hover) {
+			transition: $transition ease color, $transition border-color 0s;
+
+			&:hover {
+				color: $Orange;
+				border-color: $Orange;
+			}
+		}
+	}
+}

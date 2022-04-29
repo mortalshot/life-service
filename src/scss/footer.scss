@@ -1,0 +1,110 @@
+//====================================================================================================
+.footer {
+    padding-top: rem(45);
+    padding-bottom: rem(45);
+    background-color: $LGray;
+
+    // .footer__container
+    &__container {
+        max-width: rem(1420);
+
+        @media (min-width: $mobile) {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+    }
+
+    // .footer__text
+    &__text {
+        &:not(:last-child) {
+            @media (min-width: $mobile) {
+                margin-right: rem(20);
+            }
+            @media (max-width: $mobile) {
+                margin-bottom: rem(24);
+            }
+        }
+
+        h2 {
+            font-family: $fontFamily;
+            font-weight: 500;
+        }
+    }
+
+    // .footer__right
+    &__right {
+        @media (min-width: $mobileSmall) {
+            display: flex;
+            align-items: flex-start;
+            @include adaptiveValue("margin-left", -40, -15, 1512, 768, 1);
+            @include adaptiveValue("margin-right", -40, -15, 1512, 768, 1);
+
+            & > * {
+                @include adaptiveValue("padding-left", 40, 15, 1512, 768, 1);
+                @include adaptiveValue("padding-right", 40, 15, 1512, 768, 1);
+            }
+        }
+        @media (max-width: $mobileSmall) {
+            & > * {
+                &:not(:last-child) {
+                    margin-bottom: rem(32);
+                }
+            }
+        }
+    }
+
+    // .footer__contacts
+    &__contacts {
+        display: grid;
+        row-gap: rem(10);
+    }
+
+    // .footer__menu
+    &__menu {
+        .menu__list {
+            @media (max-width: $mobile) {
+                display: grid;
+                row-gap: rem(10);
+            }
+
+            a {
+                @include adaptiveValue("font-size", 18, 16);
+                line-height: math.div(23, 18);
+            }
+        }
+    }
+}
+
+.contact {
+    // .contact__item
+    &__item {
+        display: flex;
+        align-items: center;
+        @include adaptiveValue("font-size", 18, 16);
+        line-height: math.div(23, 18);
+
+        img {
+            max-width: rem(26);
+
+            &:not(:last-child) {
+                margin-right: rem(10);
+            }
+        }
+    }
+    a.contact__item {
+        @media (any-hover: hover) {
+            transition: $transition ease color 0s;
+
+            &:hover {
+                color: $Orange;
+
+                img {
+                    animation: shake-bottom 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+                }
+            }
+        }
+    }
+}
+
+//====================================================================================================

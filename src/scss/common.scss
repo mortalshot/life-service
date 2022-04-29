@@ -1,0 +1,270 @@
+// Заголовки, общие БЄМ блоки и проче...
+h {
+    &1 {
+        font-family: $fontSecond;
+        font-weight: 400;
+        @include adaptiveValue("font-size", 70, 24);
+        line-height: math.div(91, 70);
+    }
+    &2 {
+        font-family: $fontSecond;
+        font-weight: 400;
+        @include adaptiveValue("font-size", 30, 20);
+        line-height: math.div(39, 30);
+    }
+    &3 {
+        font-family: $fontSecond;
+        font-weight: 600;
+        @include adaptiveValue("font-size", 24, 16);
+        line-height: math.div(31, 30);
+    }
+}
+
+[data-popup] {
+    cursor: pointer;
+}
+
+img,
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+._content {
+    h1,
+    h2,
+    h3,
+    h4 {
+        &:not(:last-child) {
+            margin-bottom: rem(16);
+        }
+    }
+
+    p {
+        margin: rem(16) 0;
+    }
+
+    ol,
+    ul {
+        display: grid;
+    }
+
+    ol {
+        counter-reset: item;
+
+        li {
+            position: relative;
+            @include adaptiveValue("padding-left", 40, 24);
+            list-style-type: none;
+
+            &::before {
+                content: counter(item) ".";
+                counter-increment: item;
+                position: absolute;
+                left: 0;
+            }
+
+            & > ol {
+                counter-reset: subitem;
+
+                li {
+                    &::before {
+                        content: counter(item) "." counters(subitem, ".") " ";
+                        counter-increment: subitem;
+                    }
+                }
+            }
+        }
+    }
+
+    ul {
+        padding-left: rem(24);
+
+        li {
+            list-style: disc;
+        }
+    }
+
+    :first-child {
+        margin-top: 0;
+    }
+    :last-child {
+        margin-bottom: 0;
+    }
+}
+
+.table {
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: thin;
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+
+        th,
+        td {
+            @include adaptiveValue("min-width", 145, 98, 1440, 768, 1);
+            vertical-align: baseline;
+        }
+
+        th {
+        }
+
+        td {
+            background-color: $LGray;
+            @include adaptiveValue("padding", 20, 10, 1512, 768, 1);
+        }
+    }
+}
+
+section {
+    padding-top: rem(20);
+    @include adaptiveValue("margin-bottom", 70, 44);
+
+    &:not(:first-child) {
+        padding-top: rem(30);
+    }
+    &:last-child {
+        @include adaptiveValue("margin-bottom", 100, 50);
+    }
+}
+
+@keyframes shake-bottom {
+    0%,
+    100% {
+        transform: rotate(0deg);
+        transform-origin: 50% 100%;
+    }
+    10% {
+        transform: rotate(2deg);
+    }
+    20%,
+    40%,
+    60% {
+        transform: rotate(-4deg);
+    }
+    30%,
+    50%,
+    70% {
+        transform: rotate(4deg);
+    }
+    80% {
+        transform: rotate(-2deg);
+    }
+    90% {
+        transform: rotate(2deg);
+    }
+}
+
+// swiper
+.swiper-pagination {
+    text-align: center;
+    transform: translate3d(0, 0, 0);
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include adaptiveValue("margin-top", 24, 16);
+
+    &-bullet {
+        display: inline-block;
+        width: rem(12);
+        height: rem(12);
+        padding: rem(5);
+        position: relative;
+        box-sizing: content-box;
+        transition: $transition ease all 0s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            border-radius: 50%;
+            background-color: $Blue;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: rem(12);
+            height: rem(12);
+            border: 2px solid transparent;
+            transition: $transition ease all 0s;
+        }
+
+        &:only-child {
+            display: none !important;
+        }
+
+        &-active {
+            &::before {
+                background-color: $Orange;
+            }
+        }
+    }
+
+    button.swiper-pagination-bullet {
+        border: none;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+    &.swiper-pagination-hidden {
+        opacity: 0;
+    }
+
+    &-bullets-dynamic {
+        overflow: hidden;
+        font-size: 0;
+
+        .swiper-pagination-bullet {
+            transform: scale(0.33);
+            position: relative;
+        }
+
+        .swiper-pagination-bullet-active {
+            transform: scale(1);
+
+            &::before {
+                border-color: $LGray;
+                background-color: $White;
+            }
+        }
+
+        .swiper-pagination-bullet-active-main {
+            transform: scale(1);
+        }
+
+        .swiper-pagination-bullet-active-prev {
+            transform: scale(0.66);
+        }
+
+        .swiper-pagination-bullet-active-prev-prev {
+            transform: scale(0.33);
+        }
+
+        .swiper-pagination-bullet-active-next {
+            transform: scale(0.66);
+        }
+
+        .swiper-pagination-bullet-active-next-next {
+            transform: scale(0.33);
+        }
+    }
+
+    &-clickable {
+        .swiper-pagination-bullet {
+            cursor: pointer;
+        }
+    }
+}

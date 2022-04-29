@@ -1462,6 +1462,14 @@ section:not(:first-child) {
 .header._header-scroll .menu__list a {
   color: #000;
 }
+.dark .header._header-scroll .menu__list a {
+  color: #000;
+}
+@media (any-hover: hover) {
+  .header._header-scroll .menu__list a:hover {
+    color: #febc11;
+  }
+}
 .header._header-scroll .header__btn a {
   color: #1b3c4f;
   border-color: #1b3c4f;

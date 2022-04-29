@@ -225,6 +225,16 @@
 		.menu__list {
 			a {
 				color: $Black;
+
+				.dark & {
+					color: $Black;
+				}
+
+				@media (any-hover: hover) {
+					&:hover {
+						color: $Orange;
+					}
+				}
 			}
 		}
 

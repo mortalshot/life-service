@@ -1721,10 +1721,8 @@ section:not(:first-child) {
   padding-top: 0;
 }
 .hero__top {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: left;
   padding-top: 10.5rem;
+  position: relative;
 }
 @supports (padding-bottom: clamp( 6.25rem , 4.7876344086rem  +  7.311827957vw , 10.5rem )) {
   .hero__top {
@@ -1735,6 +1733,18 @@ section:not(:first-child) {
   .hero__top {
     padding-bottom: calc(6.25rem + 4.25 * (100vw - 20rem) / 58.125);
   }
+}
+.hero__top-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+}
+.hero__container {
+  position: relative;
 }
 .hero__text {
   max-width: 45.25rem;
